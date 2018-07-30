@@ -11,15 +11,15 @@ MongoClient.connect('mongodb://192.168.33.10:27017/test' ,(err,client)=>{
     console.log('Connected to MongoDB Server')
     const db=client.db('test');
 
-    // db.collection('Todos').insertOne({
-    //     text:'Something to do',
-    //     completed:false
-    // },(err,result)=>{
-    //     if(err){
-    //         return console.log("Unable to insert todo",err);
-    //     }
-    //     console.log(JSON.stringify(result.ops,undefined,2));
-    // });
+    db.collection('Todos').insertOne({
+        text:'Eat Lunch',
+        completed:false
+    },(err,result)=>{
+        if(err){
+            return console.log("Unable to insert todo",err);
+        }
+        console.log(JSON.stringify(result.ops,undefined,2));
+    });
     // db.collection('appuser').insertOne({
     //     name:'Saurabh Jain',
     //     age:34,
