@@ -13,7 +13,7 @@ MongoClient.connect('mongodb://192.168.33.10:27017/test' ,(err,client)=>{
     // },(err)=>{
     //     console.log(err);
     // });
-    db.collection('appuser').findOneAndUpdate({name:'Saurabh Jain'},{$inc:{age:1}},{returnOriginal:false}).then((result)=>{
+    db.collection('appuser').findOneAndUpdate({name:'Saurabh'},{$set:{name:'Shilpa Jain'},$inc:{age:1}},{returnOriginal:false}).then((result)=>{
         console.log(JSON.stringify(result,undefined,2));
     },(err)=>{
         console.log(err);
